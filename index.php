@@ -93,7 +93,7 @@ include "includes/options_config.php";
     } 
     ?>
     <?
-    if (file_exists("$bin_mitmproxy")) { 
+    if (file_exists("$bin_bdfproxy")) { 
         echo "&nbsp;$mod_alias <font style='color:lime'>installed</font><br>";
     } else {
         echo "&nbsp;$mod_alias <a href='includes/module_action.php?install=install_$mod_name' style='color:red'>install</a><br>";

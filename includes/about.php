@@ -11,6 +11,8 @@ IRC: irc.freenode.net #BDFactory
 <br>
 Twitter: @midnite_runr
 <br><br><br>
+<b>AUTO_PATCH</b> option has been added by @xtr4nge
+<br><br><br>
 <b>Metasploit:</b>
 <div style='font-family: monospace'>
 <br>use exploit/multi/handler

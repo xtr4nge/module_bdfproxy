@@ -2,55 +2,39 @@
 < proxyPort = 8080
 ---
 > proxyPort = 9998
-43c43
-< 
----
-> autoPatch = True  # True, False  # @xtr4nge
-98c98
-< 	LinuxType = ALL 	# choices: x86/x64/ALL/None
----
-> 	LinuxType = None 	# choices: x86/x64/ALL/None
 107,108c107,108
 < 		HOST = 192.168.1.168 		# The C2
 < 		PORT = 8888
 ---
-> 		HOST = 10.0.0.1 # LinuxIntelx86 Metasploit IP
+> 		HOST = 10.0.0.1 		# The C2
 > 		PORT = 6660
 114,115c114,115
 < 		HOST = 192.168.1.16
 < 		PORT = 9999
 ---
-> 		HOST = 10.0.0.1 # LinuxIntelx64 Metasploit IP
+> 		HOST = 10.0.0.1
 > 		PORT = 6661
-121,122c121,122
+123,124c123,124
 < 		HOST = 192.168.1.16
 < 		PORT = 8443
 ---
 > 		HOST = 10.0.0.1 # WindowsIntelx86 Metasploit IP
 > 		PORT = 6662
-131,132c131,132
+135,136c135,136
 < 		HOST = 192.168.1.16
 < 		PORT = 8088
 ---
 > 		HOST = 10.0.0.1 # WindowsIntelx64 Metasploit IP
 > 		PORT = 6663
-141,142c141,142
+145,146c145,146
 < 		HOST = 192.168.1.16
 < 		PORT = 4444
 ---
-> 		HOST = 10.0.0.1 # MachoIntelx86 Metasploit IP
+> 		HOST = 10.0.0.1
 > 		PORT = 6664
-148,149c148,149
+152,153c152,153
 < 		HOST = 192.168.1.16
 < 		PORT = 5555
 ---
-> 		HOST = 10.0.0.1 # MachoIntelx64 Metasploit IP
+> 		HOST = 10.0.0.1
 > 		PORT = 6665
-159c159
-< 	CompressedFiles = False
----
-> 	CompressedFiles = True
-167c167
-< 	CompressedFiles = False
----
-> 	CompressedFiles = True

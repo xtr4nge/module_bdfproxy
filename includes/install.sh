@@ -27,11 +27,11 @@ cd ..
 ./install.sh
 cd ..
 
-echo "patching bdfproxy (AUTO_PATCH)..."
+echo "patching bdfproxy config..."
 
-patch bdf-proxy/bdf_proxy.py < patch/bdf_proxy.py.patch
 patch bdf-proxy/bdfproxy.cfg < patch/bdfproxy.cfg.patch
-patch bdf-proxy/bdf/pebin.py < patch/pebin.py.patch
+#patch bdf-proxy/bdf_proxy.py < patch/bdf_proxy.py.patch
+#patch bdf-proxy/bdf/pebin.py < patch/pebin.py.patch
 
 echo "..DONE.."
 exit

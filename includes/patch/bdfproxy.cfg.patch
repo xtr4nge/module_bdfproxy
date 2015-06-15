@@ -1,3 +1,7 @@
+35c35
+< transparentProxy = None  # Modes: None, socks5, transparent, reverse, upstream
+---
+> transparentProxy = transparent  # Modes: None, socks5, transparent, reverse, upstream
 38c38
 < proxyPort = 8080
 ---

@@ -2,7 +2,7 @@
 
 echo "installing mitmproxy..."
 
-apt-get -y install python-pip python-configobj
+apt-get -y install git python-pip python-configobj
 
 apt-get -y install build-essential python-dev libffi-dev libssl-dev libxml2-dev libxslt1-dev
 

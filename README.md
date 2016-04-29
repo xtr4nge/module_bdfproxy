@@ -12,3 +12,8 @@ v1.0
 v1.1
 ---------------------------------
 - Autopatch has been updated
+
+v1.3
+---------------------------------
+- module has been updated to BDF v3.3.1
+- minor changes to support mitmproxy v0.17

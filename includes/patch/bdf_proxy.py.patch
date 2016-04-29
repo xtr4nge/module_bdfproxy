@@ -1,0 +1,18 @@
+--- bdf_proxy.py.ORIGINAL	2016-04-29 09:40:51.168433005 +0100
++++ bdf_proxy.py	2016-04-29 09:42:09.473214593 +0100
+@@ -27,9 +27,13 @@
+     POSSIBILITY OF SUCH DAMAGE.
+     Tested on Kali-Linux.
+ """
++try:
++    from mitmproxy import controller, proxy, platform
++    from mitmproxy.proxy.server import ProxyServer
++except:
++    from libmproxy import controller, proxy, platform
++    from libmproxy.proxy.server import ProxyServer
+ 
+-from libmproxy import controller, proxy, platform
+-from libmproxy.proxy.server import ProxyServer
+ import os
+ from bdf import pebin
+ from bdf import elfbin

